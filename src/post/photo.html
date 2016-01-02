@@ -1,0 +1,14 @@
+{block:Photo}
+<figure class="post-content {block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
+  {LinkOpenTag}
+  <div class="mainImage">
+    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
+  </div>
+  {LinkCloseTag}
+  {block:Caption}
+  <figcaption>
+    {Caption}
+  </figcaption>
+  {/block:Caption}
+</figure>
+{/block:Photo}

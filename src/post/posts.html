@@ -1,0 +1,108 @@
+<div data-page-id="{CurrentPage}">
+  {block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
+  <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage}"
+  {block:Date}data-post-id="post_{PostID}" {/block:Date}>
+    <div class="wraap">
+      {block:RebloggedFrom}
+      <p>
+        <a class="reblog-link" href="{ReblogParentURL}"><i class="icon-reblog"></i>{ReblogParentName}</a>
+      </p>
+      {/block:RebloggedFrom}
+      <section class="check">
+        <!--=include text.html -->
+        <!--=include photo.html -->
+        <!--=include photoset.html -->
+        <!--=include quote.html -->
+        <!--=include link.html -->
+        <!--=include chat.html -->
+        <!--=include audio.html -->
+        <!--=include video.html -->
+        <!--=include answer.html -->
+        <p class="{block:RebloggedFrom} has-reblog{/block:RebloggedFrom}{block:ContentSource} has-source{/block:ContentSource}{block:HasTags} has-tags{/block:HasTags}">
+          {block:RebloggedFrom}
+            <a class="meta-item reblog-link" href="{ReblogParentURL}"><i class="icon-reblog"></i>{ReblogParentName}</a>
+          {/block:RebloggedFrom}
+          {block:ContentSource}
+            <a class="meta-item source-link" href="{SourceURL}">{lang:Source}: {SourceTitle}</a>
+          {/block:ContentSource}
+          {block:HasTags}
+            {block:Tags}
+              <span>
+                <i class="fa fa-fw fa-tag accent"></i>
+                <a class="meta-item tag-link" href="{TagURL}">{Tag}</a>
+              </span>
+            {/block:Tags}
+          {/block:HasTags}
+        </p>
+
+      </section>
+
+      {block:Date}
+      <section class="p-content">
+        <footer class="post-footer">
+          <section class="inline-meta date-notes">
+            <div class="date-note-wrapper">
+              {block:NoteCount}
+              <a href="{Permalink}#notes" class="meta-item post-notes">{NoteCountWithLabel}</a> {/block:NoteCount}
+              <a href="{Permalink}" title="{TimeAgo}" class="meta-item post-date">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a>
+            </div>
+          </section>
+          <section class="post-controls">
+              <div class="controls-wrapper">
+                  <!-- <div class="control share-control">
+                      <div class="pop">
+                          <a href="#" class="share selector icon-export"></a>
+                          <div class="pop-menu share-menu south" id="share_{PostID}">
+                              <ul>
+                                  <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="{PostID}">Open in app</a></li>
+                                  <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" class="share-item facebook" target="_blank">Facebook</a></li>
+                                  <li><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" class="share-item twitter" target="_blank">Tweet</a></li>
+                                  {block:Photo}
+                                      <li><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" class="share-item pinterest" target="_blank">Pinterest</a></li>
+                                  {/block:Photo}
+                                  {block:Video}{block:VideoThumbnail}
+                                      <li><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={VideoThumbnailURL}&amp;is_video=true" class="share-item pinterest" target="_blank">Pinterest</a></li>
+                                  {/block:VideoThumbnail}{/block:Video}
+                                  <li><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}" class="share-item mail">Mail</a></li>
+                                  <li><a href="{Permalink}/embed" class="share-item permalink">Embed</a></li>
+                                  <li><a href="{Permalink}" class="share-item permalink">{lang:Permalink} <i class="icon-arrow_carrot_right"></i></a></li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div> -->
+                  <a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" class="share-item facebook accent" target="_blank">
+                    <i class="fa fa-fw fa-lg fa-facebook-square"></i>
+                  </a>
+                  <a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" class="share-item twitter accent" target="_blank">
+                    <i class="fa fa-fw fa-lg fa-twitter"></i>
+                  </a>
+                  <div class="control reblog-control">{ReblogButton size="21" color="black"}</div>
+                  <div class="control like-control">{LikeButton size="20" color="black"}</div>
+              </div>
+          </section>
+        </footer>
+      </section>
+      {/block:Date} {block:PermalinkPage} {block:PostNotes}
+      <section id="notes" class="notes-wrapper clearfix">
+        {PostNotes-64}
+      </section>
+      {/block:PostNotes} {block:Date} {block:IfDisqusShortname}
+      <section class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+      </section>
+      {/block:IfDisqusShortname} {/block:Date} {/block:PermalinkPage}
+    </div>
+  </article>
+  {/block:Posts}
+</div>

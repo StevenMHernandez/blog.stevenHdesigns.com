@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="lt-ie10 lt-ie9"> <![endif]-->
+<!--[if IE 9]><html class="lt-ie10"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html>
+<!--<![endif]-->
+
+<head>
+  {MobileAppHeaders}
+  <meta charset="utf-8">
+  <title>{Title}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
+  {block:Description}
+  <meta name="description" content="{MetaDescription}"> {/block:Description} {block:Hidden}
+  <meta name="if:Sliding header" content="1">
+  <meta name="if:Show navigation" content="1">
+  <meta name="if:Endless scrolling" content="1">
+  <meta name="select:Layout" content="regular" title="Regular">
+  <meta name="select:Layout" content="narrow" title="Narrow">
+  <meta name="select:Layout" content="grid" title="Grid">
+  <meta name="text:Disqus shortname" content="">
+  <meta name="text:Google analytics ID" content=""> {/block:Hidden}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+
+  <link rel="stylesheet" href="http://static.tumblr.com/wqcsqza/yTRnpu5wi/main-min.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+  <!-- HTML5 Shiv -->
+  <!--[if lt IE 9]>
+            <script src="http://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
+        <![endif]-->
+
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      ::selection {
+        background: #000;
+        color: #fff;
+      }
+      ::-moz-selection {
+        background: #000;
+        color: #fff;
+      }
+      #ie {
+        height: 1px;
+        width: 1px;
+        overflow: hidden;
+      }
+      html {
+        font-family: "Raleway", Helvetica, Arial, sans-serif;
+        box-sizing: border-box;
+        border-bottom: solid #6cc 1px;
+        overflow-x: hidden;
+        min-height: 100%;
+      }
+      body {
+        background: #fff;
+      }
+      header {
+        padding: 4.5em;
+        padding-top: 27%;
+        display: block;
+        background: #000;
+        color: #fff;
+      }
+      header div {
+        font-size: 3em;
+        font-weight: 900;
+      }
+      header a {
+        color: #fff;
+        text-decoration: none;
+      }
+      a {
+        color: #000;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #999;
+      }
+      nav {
+        padding: 0 3em 3em;
+        margin-top: -1px;
+        background: #000;
+        color: #fff;
+        font-size: 1.5em;
+      }
+      nav ul {
+        margin: 0;
+        padding: 0;
+      }
+      nav li {
+        display: inline;
+        padding-right: .5em;
+        margin-right: .5em;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        border-bottom: solid white 1px;
+        transition: border .18s;
+        -webkit-transition: border .18s;
+      }
+      nav a:hover {
+        border-bottom: solid white 3.6em;
+      }
+      nav.pop {
+        padding: 0;
+        margin: 0;
+      }
+      h1 {
+        margin: 2em auto 1em;
+        padding: 1em 1em 1em;
+        border-left: solid 3em #000;
+      }
+      h2 {
+        border-color: #fff !important;
+        margin-bottom: .25em;
+        color: #000 !important;
+      }
+      a h2:hover {
+        color: #000;
+        text-decoration: underline;
+      }
+      h3 {
+        font-style: italic;
+        color: #999;
+        font-weight: 500;
+      }
+      p, blockquote, .p-content, article ul, label {
+        padding: 0 3.75em 1em;
+        line-height: 1.5em;
+        max-width: 27em;
+        font-size: 1.25em;
+      }
+      blockquote {
+        font-style: italic;
+      }
+      article ul {
+        list-style-type: none;
+      }
+      article li {
+        border-left: 1.5em black solid;
+        padding-left: .5em;
+        margin-bottom: .5em;
+      }
+      p a {
+        color: #999;
+        text-decoration: none;
+        border-bottom: 0px solid #000;
+        transition: border-bottom .1s, color .1s;
+        -webkit-transition: border-bottom .1s, color .1s;
+      }
+      p a:hover {
+        border-bottom: 3px solid #000;
+        color: #000;
+      }
+      p.readMore {
+        text-align: right;
+      }
+      img {
+        max-width: 72%;
+        /*max-width: 100%;*/
+        max-height: 100%;
+        height: auto;
+        width: auto;
+        margin: 1em auto;
+        display: block;
+      }
+      .vimeo {
+        background: #000;
+        border: none;
+        padding: 1em;
+        display: block;
+        margin: 1em 0;
+      }
+      .mainImage {
+        background: #000;
+        color: #fff;
+        padding: 1em;
+        margin: 1em 0;
+      }
+      .mainImage iframe {
+        margin: 0 auto;
+      }
+      .vimeo iframe {
+        margin: auto;
+        display: block
+      }
+      .accent {
+        color: #999;
+      }
+      .bordered, input, textarea, select {
+        width: 36em;
+        max-width: 72%;
+        display: block;
+        border: black solid 3px;
+        margin-bottom: 1em;
+        font-size: 1em;
+        padding: 1.25em;
+        font-family: raleway, helvetica, arial, sans-serif;
+      }
+      select {
+        width: 39em;
+        padding: 0;
+      }
+      option {
+        padding: 1.25em;
+      }
+      p input {
+        margin: 0;
+      }
+      input[type="submit"] {
+        width: auto;
+        cursor: pointer;
+      }
+      textarea {
+        font-size: 1em;
+      }
+      header, nav, h1, h2, p, blockquote, .p-content, .bordered, input, textarea, select, ul, label {
+        transition: border .9s, padding .9s, margin .9s;
+        -webkit-transition: border .9s, padding .9s, margin .9s;
+      }
+      @media (max-width: 599px) {
+        header {
+          padding-left: 1.35em;
+        }
+        .bordered, input, textarea, select {
+          margin-left: 1.35em;
+        }
+        nav {
+          padding-left: .9em;
+        }
+        h1, h2 {
+          border-left: solid .9em #000;
+        }
+        p, blockquote, .p-content, .p-content, article ul, label {
+          padding: 0 1.485em 1em;
+        }
+      }
+      @media (min-width: 600px) and (max-width: 1099px) {
+        header {
+          padding-left: 4.5em;
+        }
+        .bordered, input, textarea, select {
+          margin-left: 4.5em;
+        }
+        nav {
+          padding-left: 3em;
+        }
+        h1, h2 {
+          border-left: solid 3em #000;
+        }
+        p, blockquote, .p-content, article ul, label {
+          padding: 0 3.75em 1em;
+        }
+      }
+      @media (min-width: 1100px) and (max-width: 1499px) {
+        header {
+          padding-left: 13.5em;
+        }
+        .bordered, input, textarea, select {
+          margin-left: 13.5em;
+        }
+        nav {
+          padding-left: 9em;
+        }
+        h1, h2 {
+          border-left: solid 9em #000;
+        }
+        p, blockquote, .p-content, article ul, label {
+          padding: 0 10.85em 1em;
+        }
+      }
+      @media (min-width: 1500px) {
+        header {
+          padding-left: 22.5em;
+        }
+        .bordered, input, textarea, select {
+          margin-left: 22.5em;
+        }
+        nav {
+          padding-left: 15em;
+        }
+        h1, h2 {
+          border-left: solid 15em #000;
+        }
+        p, blockquote, .p-content, article ul, label {
+          padding: 0 18em 1em;
+        }
+      }
+      .contact {
+        background: #F0F0F0;
+        border-top: 4px solid #e0e0e0;
+        margin-top: 1em;
+      }
+      .contact .contact_header {
+        display: inline-block;
+        font-weight: bold;
+        margin: 2em 0 0.5em;
+      }
+      h2#contactMessage {
+        color: #900 !important;
+      }
+      .error, .delete {
+        color: #900 !important;
+      }
+      .bordered {
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+      .bordered:last-of-type {
+        border-bottom: black solid 3px;
+      }
+      .hidden {
+        visibility: hidden;
+        height: 0;
+      }
+      .right {
+        float: right;
+      }
+      .background-muted {
+        background: #eee;
+      }
+      label input {
+        margin-left: 0;
+        width: 36%;
+      }
+      /* Posts */
+    
+      .link .mainImage h2 {
+        color: #fff !important;
+        border-color: #000 !important;
+      }
+      .p-content blockquote {
+        font-size: 20px;
+        font-style: italic;
+        padding: 0;
+      }
+    
+    /* Custom CSS */
+
+    {
+      CustomCSS
+    }
+  </style>
+</head>
+
+<body data-urlencoded-name="{URLEncodedName}" class="{select:Layout}{block:IndexPage} index-page{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}{block:SearchPage} search-page{block:NoSearchResults} no-results{/block:NoSearchResults}{/block:SearchPage}{block:HideHeaderImage} no-header-image{/block:HideHeaderImage}{block:NoStretchHeaderImage} contain-header-image{/block:NoStretchHeaderImage}">
+  <header>
+    <div><a href="/">blog.<span class="accent">stevenHdesigns</span></a></div>
+  </header>
+
+  {block:IfShowNavigation}
+  <nav>
+    <ul>
+      <li><a href="http://stevenHdesigns.com">Portfolio.</a></li>
+      <li><a href="http://stevenHdesigns.com#contact">Contact.</a></li>
+      {block:HasPages} {block:Pages}
+      <li class="nav-item nav-item--page">
+        <a href="{URL}" class="label">{Label}.</a>
+      </li>
+      {/block:Pages} {/block:HasPages} {block:AskEnabled}
+      <li class="nav-item nav-item--ask">
+        <a href="/ask" class="label">{AskLabel}.</a>
+      </li>
+      {/block:AskEnabled} {block:SubmissionsEnabled}
+      <li class="nav-item nav-item--submit">
+        <a href="/submit" class="label">{SubmitLabel}.</a>
+      </li>
+      {/block:SubmissionsEnabled}
+      <li class="nav-item nav-item--archive">
+        <a href="/archive" class="label">{lang:Archive}.</a>
+      </li>
+    </ul>
+  </nav>
+  {/block:IfShowNavigation}
+
+  {block:ShowDescription}
+    <p>
+      {Description}
+    </p>
+  {/block:ShowDescription}
+
+    <!-- <p class="search-wrapper">
+      <form action="/search" method="get" id="search">
+        <label class="search-field-label">
+          <input type="text" class="search-field" name="q" id="q" placeholder="{lang:Search Blog}" value="{SearchQuery}">
+        </label>
+      </form>
+    </p> -->
+
+  <!-- </article> -->
+  <section id="page">
+    {block:SearchPage}
+      {block:NoSearchResults}
+        <div class="search-no-results content">
+          {lang:Sorry no search results found}.
+        </div>
+      {/block:NoSearchResults}
+    {/block:SearchPage}
+    <section id="posts" class="{block:HideTitle}{block:HideDescription}no-title-desc {/block:HideDescription}{/block:HideTitle}{block:HideHeaderImage}no-image {/block:HideHeaderImage} {block:ShowAvatar}avatar-style-{AvatarShape}{/block:ShowAvatar} {block:HideAvatar}avatar-hidden{/block:HideAvatar} {block:IfShowNavigation}show-nav{/block:IfShowNavigation}">
+      <article>
+        <div data-page-id="{CurrentPage}">
+          {block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
+          <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:Date}not-page post-{PostID}{/block:Date} {block:PermalinkPage} active exposed{/block:PermalinkPage}"
+          {block:Date}data-post-id="post_{PostID}" {/block:Date}>
+            <div class="wraap">
+              {block:RebloggedFrom}
+              <p>
+                <a class="reblog-link" href="{ReblogParentURL}"><i class="icon-reblog"></i>{ReblogParentName}</a>
+              </p>
+              {/block:RebloggedFrom}
+              <section class="check">
+                {block:Text}
+                  {block:Title}
+                  <h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title} {block:Body}
+                  <div class="body-text">
+                    {Body}
+                  </div>
+                  {/block:Body}
+                {/block:Text}
+                
+                {block:Photo}
+                <figure class="post-content {block:HighRes}high-res{/block:HighRes}{block:Caption} with-caption{/block:Caption}" data-photo-width="{PhotoWidth-HighRes}">
+                  {LinkOpenTag}
+                  <div class="mainImage">
+                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
+                  </div>
+                  {LinkCloseTag}
+                  {block:Caption}
+                  <figcaption>
+                    {Caption}
+                  </figcaption>
+                  {/block:Caption}
+                </figure>
+                {/block:Photo}
+                
+                {block:Photoset}
+                <figure class="post-content photoset {block:Caption}with-caption{/block:Caption}">
+                 {Photoset} {block:Caption}
+                 <figcaption class="caption">
+                   {Caption}
+                 </figcaption>
+                 {/block:Caption}
+                </figure>
+                {/block:Photoset}
+                
+                {block:Quote}
+                <div class="p-content">
+                  <blockquote class="{Length}">
+                    {Quote}
+                  </blockquote>
+                  {block:Source}
+                  <div class="source">{Source}</div>
+                  {/block:Source}
+                </div>
+                {/block:Quote}
+                
+                {block:Link}
+                <div class="post-content{block:Description} with-caption{/block:Description}{block:Thumbnail} with-thumbnail{/block:Thumbnail}">
+                  <div class="mainImage">
+                    <a {Target} href="{URL}" class="link">
+                       {block:Thumbnail}
+                       <div class="link-thumbnail"><img src="{Thumbnail-HighRes}" alt="" /></div>
+                       {/block:Thumbnail}
+                       <div class="link-text-wrapper clearfix">
+                           <div class="link-text">
+                               {block:Host}
+                               <div class="link-host">{Host}</div>
+                               {/block:Host}
+                               <h2 class="link-title">{Name}</h2>
+                               {block:Excerpt}
+                               <div class="link-excerpt">{Excerpt}</div>
+                               {/block:Excerpt}
+                               {block:Author}
+                               <div class="link-author">{Author}</div>
+                               {/block:Author}
+                           </div>
+                       </div>
+                   </a>
+                   {block:Description}
+                    <div class="caption">
+                      {Description}
+                    </div>
+                    {/block:Description}
+                  </div>
+                </div>
+                {/block:Link}
+                
+                {block:Chat}
+                <div class="p-content">
+                  {block:Title}
+                  <h2 class="title"><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+                  <ul class="conversation">
+                    {block:Lines}
+                    <li class="chat-{Alt}">{block:Label}
+                      <span class="label">{Label}</span>{/block:Label} {Line}</li>
+                    {/block:Lines}
+                  </ul>
+                </div>
+                {/block:Chat}
+                
+                {block:Audio}
+                <div class="post-content {block:Caption}with-caption{/block:Caption}">
+                <div class="audio_container">
+                {block:AudioEmbed} {AudioEmbed color="white"} {/block:AudioEmbed}
+                </div>
+                {block:Caption}
+                <div class="caption">
+                {Caption}
+                </div>
+                {/block:Caption}
+                </div>
+                {/block:Audio}
+                
+                {block:Video}
+                <figure class="post-content {block:Caption}with-caption{/block:Caption}">
+                  <div class="mainImage">
+                    {Video-700}
+                  </div>
+                  {block:Caption}
+                  <figcaption>
+                    {Caption}
+                  </figcaption>
+                  {/block:Caption}
+                </figure>
+                {/block:Video}
+                
+                {block:Answer}
+                <div class="post-content">
+                  <div class="note-item note-item-asker">
+                    <div class="text">
+                      <p class="asker">
+                        <strong>{Asker}</strong> asked:</p>
+                      <div class="asker-question">
+                        {Question}
+                      </div>
+                    </div>
+                    <div class="avatar">
+                      <img class="asker-avatar" src="{AskerPortraitURL-96}" alt="">
+                    </div>
+                  </div>
+                
+                  {block:Answerer}
+                  <div class="note-item note-item-answerer">
+                    <div class="text">
+                      <p class="answerer">
+                        <strong>{Answerer}</strong> answered:</p>
+                      <div class="answerer-answer">
+                        {Answer}
+                      </div>
+                    </div>
+                    <div class="avatar">
+                      <img class="answerer-avatar" src="{AnswererPortraitURL-96}" alt="">
+                    </div>
+                  </div>
+                  {/block:Answerer}
+                
+                  <div class="replies">
+                    {Replies}
+                  </div>
+                </div>
+                {/block:Answer}
+                
+                <p class="{block:RebloggedFrom} has-reblog{/block:RebloggedFrom}{block:ContentSource} has-source{/block:ContentSource}{block:HasTags} has-tags{/block:HasTags}">
+                  {block:RebloggedFrom}
+                    <a class="meta-item reblog-link" href="{ReblogParentURL}"><i class="icon-reblog"></i>{ReblogParentName}</a>
+                  {/block:RebloggedFrom}
+                  {block:ContentSource}
+                    <a class="meta-item source-link" href="{SourceURL}">{lang:Source}: {SourceTitle}</a>
+                  {/block:ContentSource}
+                  {block:HasTags}
+                    {block:Tags}
+                      <span>
+                        <i class="fa fa-fw fa-tag accent"></i>
+                        <a class="meta-item tag-link" href="{TagURL}">{Tag}</a>
+                      </span>
+                    {/block:Tags}
+                  {/block:HasTags}
+                </p>
+        
+              </section>
+        
+              {block:Date}
+              <section class="p-content">
+                <footer class="post-footer">
+                  <section class="inline-meta date-notes">
+                    <div class="date-note-wrapper">
+                      {block:NoteCount}
+                      <a href="{Permalink}#notes" class="meta-item post-notes">{NoteCountWithLabel}</a> {/block:NoteCount}
+                      <a href="{Permalink}" title="{TimeAgo}" class="meta-item post-date">{ShortMonth} {DayOfMonth}{DayOfMonthSuffix}, {Year}</a>
+                    </div>
+                  </section>
+                  <section class="post-controls">
+                      <div class="controls-wrapper">
+                          <!-- <div class="control share-control">
+                              <div class="pop">
+                                  <a href="#" class="share selector icon-export"></a>
+                                  <div class="pop-menu share-menu south" id="share_{PostID}">
+                                      <ul>
+                                          <li class="open-in-app"><a href="#" class="share-item open-in-app" data-post="{PostID}">Open in app</a></li>
+                                          <li><a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" class="share-item facebook" target="_blank">Facebook</a></li>
+                                          <li><a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" class="share-item twitter" target="_blank">Tweet</a></li>
+                                          {block:Photo}
+                                              <li><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={PhotoURL-500}" class="share-item pinterest" target="_blank">Pinterest</a></li>
+                                          {/block:Photo}
+                                          {block:Video}{block:VideoThumbnail}
+                                              <li><a href="//www.pinterest.com/pin/create/button/?url={URLEncodedPermalink}&amp;media={VideoThumbnailURL}&amp;is_video=true" class="share-item pinterest" target="_blank">Pinterest</a></li>
+                                          {/block:VideoThumbnail}{/block:Video}
+                                          <li><a href="mailto:?subject={URLEncodedShareString}&amp;body={URLEncodedMailSummary}" class="share-item mail">Mail</a></li>
+                                          <li><a href="{Permalink}/embed" class="share-item permalink">Embed</a></li>
+                                          <li><a href="{Permalink}" class="share-item permalink">{lang:Permalink} <i class="icon-arrow_carrot_right"></i></a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                          </div> -->
+                          <a href="http://facebook.com/sharer.php?u={URLEncodedPermalink}&amp;t={URLEncodedTitle}" class="share-item facebook accent" target="_blank">
+                            <i class="fa fa-fw fa-lg fa-facebook-square"></i>
+                          </a>
+                          <a href="https://twitter.com/intent/tweet?text={URLEncodedTweetSummary}" class="share-item twitter accent" target="_blank">
+                            <i class="fa fa-fw fa-lg fa-twitter"></i>
+                          </a>
+                          <div class="control reblog-control">{ReblogButton size="21" color="black"}</div>
+                          <div class="control like-control">{LikeButton size="20" color="black"}</div>
+                      </div>
+                  </section>
+                </footer>
+              </section>
+              {/block:Date} {block:PermalinkPage} {block:PostNotes}
+              <section id="notes" class="notes-wrapper clearfix">
+                {PostNotes-64}
+              </section>
+              {/block:PostNotes} {block:Date} {block:IfDisqusShortname}
+              <section class="comments">
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                  (function() {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = 'http://{text:Disqus Shortname}.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                  })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript={text:Disqus Shortname}">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+              </section>
+              {/block:IfDisqusShortname} {/block:Date} {/block:PermalinkPage}
+            </div>
+          </article>
+          {/block:Posts}
+        </div>
+        
+      </article>
+    </section>
+    <footer id="footer" class="content clearfix">
+      {block:IndexPage}
+        {block:Pagination}
+          <div id="pagination">
+            {block:PreviousPage}
+            <a href="{PreviousPage}" class="previous" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}">{lang:Previous}<span class="bg"></span></a> {/block:PreviousPage} {block:NextPage}
+            <a href="{NextPage}" class="next" data-current-page="{CurrentPage}" data-total-pages="{TotalPages}">{lang:Next}<span class="bg"></span></a> {/block:NextPage}
+            <div class="loader">
+              <div class="loader-bar"></div>
+              <div class="loader-bar"></div>
+              <div class="loader-bar"></div>
+            </div>
+          </div>
+        {/block:Pagination}
+      {/block:IndexPage}
+    </footer>
+  </section>
+  <script>
+    var Optica = {};
+    Optica.ENDLESS_SCROLLING = {
+      block: IfEndlessScrolling
+    }
+    true {
+      /block:IfEndlessScrolling}{block:IfNotEndlessScrolling}false{/block: IfNotEndlessScrolling
+    };
+    Optica.LAYOUT = "{select:Layout}";
+    Optica.GRID_LAYOUT = (Optica.LAYOUT === 'grid');
+    Optica.TITLE_COLOR = "{TitleColor}";
+    Optica.ACCENT_COLOR = "{AccentColor}";
+    Optica.BACKGROUND_COLOR = "{BackgroundColor}";
+    Optica.ENDLESS_NOTES_SCROLLING = {
+      block: IfDisqusShortname
+    }
+    false {
+      /block:IfDisqusShortname}{block:IfNotDisqusShortname}true{/block: IfNotDisqusShortname
+    };
+  </script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    !window.jQuery && document.write(unescape('%3Cscript src="http://static.tumblr.com/vr9xgox/sBgmmjhyw/jquery-1.9.1.min.js"%3E%3C/script%3E'));
+  </script>
+  <script src="http://static.tumblr.com/vr9xgox/u3znnyi2n/main-min.js"></script>
+
+  {block:IfGoogleAnalyticsID}
+  <script>
+    (function(i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', '{text:Google Analytics ID}', 'auto');
+    ga('send', 'pageview');
+  </script>
+  {/block:IfGoogleAnalyticsID}
+</body>
+
+</html>
