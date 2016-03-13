@@ -151,9 +151,6 @@
   }
   .mainImage iframe {
     margin: 0 auto;
-  }
-  .vimeo iframe {
-    margin: auto;
     display: block
   }
   .accent {
