@@ -63,6 +63,12 @@
     padding-right: .5em;
     margin-right: .5em;
   }
+  nav li.right {
+    float: right;
+  }
+  nav li.right a {
+    border: 0;
+  }
   nav a {
     color: #fff;
     text-decoration: none;
