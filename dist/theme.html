@@ -35,318 +35,451 @@
         <![endif]-->
 
   <style>
-      * {
+    * {
         margin: 0;
         padding: 0;
-      }
-      ::selection {
-        background: #000;
+    }
+    
+    ::selection {
+        background: #101010;
         color: #fff;
-      }
-      ::-moz-selection {
-        background: #000;
+    }
+    
+    ::-moz-selection {
+        background: #101010;
         color: #fff;
-      }
-      #ie {
+    }
+    
+    #ie {
         height: 1px;
         width: 1px;
         overflow: hidden;
-      }
-      html {
-        font-family: "Raleway", Helvetica, Arial, sans-serif;
+    }
+    
+    html {
+        background: #f4f4f4;
+        font-family: "Courier New", monospace;
         box-sizing: border-box;
         border-bottom: solid #6cc 1px;
         overflow-x: hidden;
         min-height: 100%;
-      }
-      body {
-        background: #fff;
-      }
-      header {
+    }
+    
+    header {
         padding: 4.5em;
         padding-top: 27%;
         display: block;
-        background: #000;
-        color: #fff;
-      }
-      header div {
+        background: #101010;
+        color: #e6e6e6;
+    }
+    
+    header div {
         font-size: 3em;
         font-weight: 900;
-      }
-      header a {
-        color: #fff;
+    }
+    
+    header a {
+        color: #e6e6e6;
         text-decoration: none;
-      }
-      a {
+    }
+    
+    a {
         color: #000;
         text-decoration: none;
-      }
-      a:hover {
+    }
+    
+    a:hover {
         color: #999;
-      }
-      nav {
+    }
+    
+    nav {
         padding: 0 3em 3em;
         margin-top: -1px;
-        background: #000;
+        background: #101010;
         color: #fff;
         font-size: 1.5em;
-      }
-      nav ul {
+    }
+    
+    nav ul {
         margin: 0;
-        padding: 0;
-      }
-      nav li {
+    }
+    
+    nav li {
         display: inline;
         padding-right: .5em;
         margin-right: .5em;
-      }
-      nav li.right {
+    }
+    
+    nav li.right {
         float: right;
-      }
-      nav li.right a {
+    }
+    
+    nav li.right a {
         border: 0;
-      }
-      nav a {
+    }
+    
+    nav a {
         color: #fff;
         text-decoration: none;
-        border-bottom: solid white 1px;
+        border-bottom: solid #f4f4f4 1px;
         transition: border .18s;
         -webkit-transition: border .18s;
-      }
-      nav a:hover {
-        border-bottom: solid white 3.6em;
-      }
-      nav.pop {
-        padding: 0;
-        margin: 0;
-      }
-      h1 {
+    }
+    
+    nav a:hover {
+        border-bottom: solid #f4f4f4 3.6em;
+    }
+    
+    h1 {
+        color: #101010;
         margin: 2em auto 1em;
         padding: 1em 1em 1em;
-        border-left: solid 3em #000;
-      }
-      h2 {
-        border-color: #fff !important;
+        border-left: solid 3em #101010;
+    }
+    
+    h2 {
+        border-color: #f4f4f4 !important;
         margin-bottom: .25em;
-        color: #000 !important;
-      }
-      a h2:hover {
+        color: #101010 !important;
+    }
+    
+    a h2:hover {
         color: #000;
         text-decoration: underline;
-      }
-      h3 {
+    }
+    
+    h3 {
         font-style: italic;
         color: #999;
         font-weight: 500;
-      }
-      p, blockquote, .p-content, article ul, label {
+    }
+    
+    p, blockquote, .p-content, article ul, label {
         padding: 0 3.75em 1em;
         line-height: 1.5em;
         max-width: 27em;
         font-size: 1.25em;
-      }
-      blockquote {
-        font-style: italic;
-      }
-      article ul {
+    }
+    
+    article ul {
         list-style-type: none;
-      }
-      article li {
-        border-left: 1.5em black solid;
+    }
+    
+    article li {
+        border-left: 1.5em #101010 solid;
         padding-left: .5em;
         margin-bottom: .5em;
-      }
-      p a {
+    }
+    
+    p a {
         color: #999;
         text-decoration: none;
         border-bottom: 0px solid #000;
         transition: border-bottom .1s, color .1s;
         -webkit-transition: border-bottom .1s, color .1s;
-      }
-      p a:hover {
+    }
+    
+    p a:hover {
         border-bottom: 3px solid #000;
         color: #000;
-      }
-      p.readMore {
+    }
+    
+    p.readMore {
         text-align: right;
-      }
-      img {
+    }
+    
+    iframe {
+        max-width: 100%;
+        width: 900px;
+        height: 450px;
+        border-top: 0;
+        border-bottom: 0;
+        border-right: 0;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    img {
         max-width: 72%;
-        /*max-width: 100%;*/
-        max-height: 100%;
-        height: auto;
-        width: auto;
         margin: 1em auto;
         display: block;
-      }
-      .vimeo {
-        background: #000;
+    }
+    
+    .vimeo {
+        background: #101010;
         border: none;
         padding: 1em;
         display: block;
         margin: 1em 0;
-      }
-      .mainImage {
-        background: #000;
-        color: #fff;
+    }
+    
+    .mainImage {
+        background: #101010;
         padding: 1em;
         margin: 1em 0;
-      }
-      .mainImage iframe {
-        margin: 0 auto;
-        display: block
-      }
-      .accent {
+    }
+    
+    .mainImage .vimeo {
+        margin: 0;
+    }
+    
+    .vimeo iframe {
+        margin: auto;
+        display: block;
+        width: 800px;
+    }
+    
+    .accent {
         color: #999;
-      }
-      .bordered, input, textarea, select {
+    }
+    
+    a:hover span.accent {
+        color: #808080;
+    }
+    
+    .bordered, input, textarea, select {
         width: 36em;
         max-width: 72%;
         display: block;
-        border: black solid 3px;
+        border: #101010 solid 3px;
         margin-bottom: 1em;
         font-size: 1em;
         padding: 1.25em;
-        font-family: raleway, helvetica, arial, sans-serif;
-      }
-      select {
+        font-family: "Courier New", monospace;
+    }
+    
+    select {
         width: 39em;
         padding: 0;
-      }
-      option {
+    }
+    
+    option {
         padding: 1.25em;
-      }
-      p input {
+    }
+    
+    p input {
         margin: 0;
-      }
-      input[type="submit"] {
+    }
+    
+    input[type="submit"] {
         width: auto;
         cursor: pointer;
-      }
-      textarea {
+    }
+    
+    textarea {
         font-size: 1em;
-      }
-      header, nav, h1, h2, p, blockquote, .p-content, .bordered, input, textarea, select, ul, label {
+    }
+    
+    footer {
+        background: #000;
+        color: #fff;
+        padding: 3em 4.5em 9em;
+    }
+    
+    footer a {
+        color: #999;
+    }
+    
+    footer a:hover {
+        color: #fff;
+    }
+    
+    header, nav, h1, h2, p, blockquote, .p-content, .bordered, input, textarea, select, footer, ul, label {
         transition: border .9s, padding .9s, margin .9s;
         -webkit-transition: border .9s, padding .9s, margin .9s;
-      }
-      @media (max-width: 599px) {
+    }
+    
+    @media (max-width: 599px) {
         header {
-          padding-left: 1.35em;
+            padding-left: 1.35em;
         }
+    
         .bordered, input, textarea, select {
-          margin-left: 1.35em;
+            margin-left: 1.35em;
         }
+    
         nav {
-          padding-left: .9em;
+            padding-left: .9em;
         }
+    
         h1, h2 {
-          border-left: solid .9em #000;
+            border-left: solid .9em #101010;
         }
+    
         p, blockquote, .p-content, .p-content, article ul, label {
-          padding: 0 1.485em 1em;
+            padding: 0 1.485em 1em;
         }
-      }
-      @media (min-width: 600px) and (max-width: 1099px) {
-        header {
-          padding-left: 4.5em;
+    }
+    
+    @media (min-width: 600px) and (max-width: 1099px) {
+        header, footer {
+            padding-left: 4.5em;
         }
+    
         .bordered, input, textarea, select {
-          margin-left: 4.5em;
+            margin-left: 4.5em;
         }
+    
         nav {
-          padding-left: 3em;
+            padding-left: 3em;
         }
+    
         h1, h2 {
-          border-left: solid 3em #000;
+            border-left: solid 3em #101010;
         }
+    
         p, blockquote, .p-content, article ul, label {
-          padding: 0 3.75em 1em;
+            padding: 0 3.75em 1em;
         }
-      }
-      @media (min-width: 1100px) and (max-width: 1499px) {
-        header {
-          padding-left: 13.5em;
+    }
+    
+    @media (min-width: 1100px) and (max-width: 1499px) {
+        header, footer {
+            padding-left: 13.5em;
         }
+    
         .bordered, input, textarea, select {
-          margin-left: 13.5em;
+            margin-left: 13.5em;
         }
+    
         nav {
-          padding-left: 9em;
+            padding-left: 9em;
         }
+    
         h1, h2 {
-          border-left: solid 9em #000;
+            border-left: solid 9em #101010;
         }
+    
         p, blockquote, .p-content, article ul, label {
-          padding: 0 10.85em 1em;
+            padding: 0 10.85em 1em;
         }
-      }
-      @media (min-width: 1500px) {
-        header {
-          padding-left: 22.5em;
+    }
+    
+    @media (min-width: 1500px) {
+        header, footer {
+            padding-left: 22.5em;
         }
+    
         .bordered, input, textarea, select {
-          margin-left: 22.5em;
+            margin-left: 22.5em;
         }
+    
         nav {
-          padding-left: 15em;
+            padding-left: 15em;
         }
+    
         h1, h2 {
-          border-left: solid 15em #000;
+            border-left: solid 15em #101010;
         }
+    
         p, blockquote, .p-content, article ul, label {
-          padding: 0 18em 1em;
+            padding: 0 18em 1em;
         }
-      }
-      .contact {
-        background: #F0F0F0;
-        border-top: 4px solid #e0e0e0;
+    }
+    
+    .contact {
+        background: #e6e6e6;
+        border-top: 4px solid #d9d9d9;
         margin-top: 1em;
-      }
-      .contact .contact_header {
+    }
+    
+    .contact .contact_header {
         display: inline-block;
         font-weight: bold;
         margin: 2em 0 0.5em;
-      }
-      h2#contactMessage {
+    }
+    
+    h2#contactMessage {
         color: #900 !important;
-      }
-      .error, .delete {
+    }
+    
+    .error, .delete {
         color: #900 !important;
-      }
-      .bordered {
+    }
+    
+    .bordered {
         margin-bottom: 0;
         border-bottom: none;
-      }
-      .bordered:last-of-type {
+    }
+    
+    .bordered:last-of-type {
         border-bottom: black solid 3px;
-      }
-      .hidden {
+    }
+    
+    .hidden {
         visibility: hidden;
         height: 0;
-      }
-      .right {
+    }
+    
+    .right {
         float: right;
-      }
-      .background-muted {
+    }
+    
+    .background-muted {
         background: #eee;
-      }
-      label input {
+    }
+    
+    label input {
         margin-left: 0;
         width: 36%;
-      }
-      /* Posts */
+    }
     
-      .link .mainImage h2 {
+    
+    body {
+        background: #f4f4f4;
+        font-family: "Courier New", monospace;
+    }
+    
+    nav {
+        margin-bottom: 2em;
+    }
+    
+    nav ul {
+        padding: 0;
+    }
+    
+    nav.pop {
+        padding: 0;
+        margin: 0;
+    }
+    
+    blockquote {
+        font-style: italic;
+    }
+    
+    .mainImage iframe {
+        margin: 0 auto;
+        display: block;
+        width: 800px
+    }
+    
+    iframe.like_toggle {
+        height: inherit;
+    }
+    
+    .link .mainImage h2 {
         color: #fff !important;
         border-color: #000 !important;
-      }
-      .p-content blockquote {
+    }
+    
+    .p-content blockquote {
         font-size: 20px;
         font-style: italic;
         padding: 0;
-      }
+    }
     
+    .post-content p + p {
+        margin-top: 0.5em;
+    }
+    
+    img {
+        height: auto;
+    }
+    
+    footer {
+        background: #f4f4f4;
+        color: #101010;
+        padding: 0;
+    }
     /* Custom CSS */
 
     {
@@ -382,7 +515,7 @@
         <a href="/archive" class="label">{lang:Archive}.</a>
       </li>
       <li class="right"><a href="https://www.linkedin.com/in/stevenmhernandez"><i class="fa fa-linkedin-square"></i></a></li>
-      <li class="right"><a href="https://github.com/StevenmHernandez"><i class="fa fa-github"></i></a></li>
+      <li class="right"><a href="https://github.com/StevenMHernandez"><i class="fa fa-github"></i></a></li>
     </ul>
   </nav>
   {/block:IfShowNavigation}
@@ -595,7 +728,7 @@
         
               {block:Date}
               <section class="p-content">
-                <footer class="post-footer">
+                <footer>
                   <section class="inline-meta date-notes">
                     <div class="date-note-wrapper">
                       {block:NoteCount}
